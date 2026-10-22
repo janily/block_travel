@@ -50,3 +50,16 @@
 5. 回滚入口：Vercel 项目 block-travel → Deployments → 已确认正常部署 → Rollback。首次上线前没有可称为“已知正常生产版本”的回滚目标。
 
 此环境无法代替真实手机或目标地区网络验收；未完成项目保持待验收状态。
+
+
+## 远端交付与 Vercel 联调
+
+源码首提交：447ead9550462ed13b29229198cf47a2705355b2；PR：https://github.com/janily/block_travel/pull/1 。
+GitHub push CI 39757631733 已成功，包含冻结安装、构建和 Chromium e2e。
+初次 Vercel 联调发现 pnpm 把依赖 store 放在仓库内，ESLint 扫描该缓存导致失败；
+已用 .pnpm-store 与 .vercel 下的临时依赖样本复现，再将两者从 ESLint/TypeScript 扫描范围排除。
+该修复不排除任何应用源码。修复版本的 Preview 结果以 PR 最新验收记录为准。
+
+Vercel 首次自动部署被标记为 production，已在完成前取消；仅显式 target=staging 的部署用于预览。
+自动审批未批准新增持久化生产构建限制，因此该设置未改动；合并前仍需核对 Production Branch=main。
+环境网络策略拒绝直接请求新 Vercel 域名，不能据此宣称实际域名 Range 或目标网络实播通过。
