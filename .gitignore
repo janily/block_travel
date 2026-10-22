@@ -147,3 +147,9 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# MVP build and local verification
+.vercel/
+playwright-report/
+test-results/
+work/
