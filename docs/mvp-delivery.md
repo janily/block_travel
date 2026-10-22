@@ -63,3 +63,14 @@ GitHub push CI 39757631733 已成功，包含冻结安装、构建和 Chromium e
 Vercel 首次自动部署被标记为 production，已在完成前取消；仅显式 target=staging 的部署用于预览。
 自动审批未批准新增持久化生产构建限制，因此该设置未改动；合并前仍需核对 Production Branch=main。
 环境网络策略拒绝直接请求新 Vercel 域名，不能据此宣称实际域名 Range 或目标网络实播通过。
+
+
+## Preview 验证与 CI 稳定性
+
+修复版本 29c15a633398eca6ce1ea8072ada65353d729a5b 的 Preview 已 READY：
+https://block-travel-183fpu2i2-janilys-projects.vercel.app/ 。
+Vercel 服务端检查：首页及 Gas/链上机制/仅已更新组合 URL 均为 200、zh-CN、正确标题及 noindex/nofollow；
+组合筛选首屏显示一条匹配待更新选题；robots 为 Disallow: /，sitemap 为空。
+该提交的 PR CI 39758469066 成功；重复 push CI 的历史用例暴露测试在 SPA 导航提交前调用 Back 的竞态，
+已补充导航完成断言，并将 CI 触发收敛到研发文档要求的 PR 与 main push，避免功能分支重复运行。
+最新提交和检查以 PR 为准。以上是非生产预览，不是生产发布或真实设备验收记录。

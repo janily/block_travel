@@ -37,7 +37,9 @@ test("filters, IME, clearing, no results recovery and URL history agree",async({
   await expect(page.getByRole("link",{name:"播放《起源》",exact:true})).toBeVisible();
   await expect(page.getByRole("heading",{name:"共识机制"})).toHaveCount(0);
   await page.goto("/videos?q=Gas&available=1");
+  await expect(input).toHaveValue("Gas");
   await page.getByRole("link",{name:"首页",exact:true}).click();
+  await expect(page).toHaveURL(/\/$/);
   await page.goBack();
   await expect(input).toHaveValue("Gas");
   await expect(page.getByLabel("仅看已更新")).toBeChecked();
