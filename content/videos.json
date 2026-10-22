@@ -1,0 +1,67 @@
+[
+  {
+    "id": "origin",
+    "status": "published",
+    "title": "起源",
+    "summary": "比特币诞生之前，数字现金走过怎样的路？",
+    "description": "从 Chaum 与 DigiCash 开始，经过 Hashcash、b-money 和 Bit Gold，回看比特币诞生前的关键探索。",
+    "category": "basics",
+    "series": "白皮书讲解",
+    "episode": 1,
+    "order": 10,
+    "durationSeconds": 193,
+    "src": "/media/videos/origin-v1.mp4",
+    "poster": {
+      "src": "/posters/origin-v1.jpg",
+      "width": 910,
+      "height": 512,
+      "alt": "《起源》视频封面"
+    },
+    "burnedInCaptions": true
+  },
+  {
+    "id": "blockchain",
+    "status": "planned",
+    "title": "区块与哈希",
+    "summary": "数据如何一块接一块，连接成一条链？",
+    "category": "basics",
+    "series": "机制解读",
+    "order": 20
+  },
+  {
+    "id": "consensus",
+    "status": "planned",
+    "title": "共识机制",
+    "summary": "没有统一的记账人，怎样对账本达成一致？",
+    "category": "basics",
+    "series": "机制解读",
+    "order": 30
+  },
+  {
+    "id": "gas",
+    "status": "planned",
+    "title": "Gas 费用",
+    "summary": "链上的一次操作，为什么需要支付费用？",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "order": 40
+  },
+  {
+    "id": "contracts",
+    "status": "planned",
+    "title": "智能合约",
+    "summary": "一段代码，如何按约定自动执行？",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "order": 50
+  },
+  {
+    "id": "defi",
+    "status": "planned",
+    "title": "AMM 与兑换",
+    "summary": "没有传统订单簿，代币之间如何完成兑换？",
+    "category": "applications",
+    "series": "机制解读",
+    "order": 60
+  }
+]
