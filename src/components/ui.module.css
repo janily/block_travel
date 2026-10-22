@@ -89,6 +89,10 @@
 /* Native media controls own seeking, volume, playback and fullscreen. */
 
 .watch-dialog { width: min(1050px, calc(100vw - 48px)); max-width: none; max-height: calc(100dvh - 48px); padding: 0; border: 1px solid var(--line-strong); border-radius: var(--radius-panel); color: var(--ink); background: var(--surface); box-shadow: 0 35px 100px color-mix(in srgb, var(--black) 55%, transparent); overflow: auto; }
+/* Let the picture shrink to the space left by the actual text and controls.
+   Keep scrolling as a fallback for enlarged text or exceptionally short windows. */
+.watch-dialog[open] { display: flex; flex-direction: column; }
+.watch-dialog > * { flex-shrink: 0; }
 .watch-dialog::backdrop { background: color-mix(in srgb, var(--background) 90%, transparent); backdrop-filter: blur(10px); }
 .watch-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 28px; position: sticky; top: 0; z-index: 2; background: var(--surface); }
 .watch-header .eyebrow { font-size: 12px; letter-spacing: .05em; }
@@ -96,7 +100,8 @@
 .close-button { border: 1px solid var(--line); background: transparent; border-radius: var(--radius-control); min-width: 44px; min-height: 44px; padding: 9px 11px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; color: var(--muted); font-size: 12px; }
 .close-button:hover { color: var(--ink); border-color: var(--primary); background: var(--surface-alt); }
 .close-button:active { background: var(--line); }
-.player-frame { position: relative; aspect-ratio: 910 / 512; width: 100%; background: var(--black); }
+.player-frame { position: relative; aspect-ratio: 910 / 512; width: 100%; min-height: 120px; flex-shrink: 1; background: var(--black); }
+.player-frame > .video-player { position: absolute; inset: 0; }
 .video-player { display: block; width: 100%; height: 100%; object-fit: contain; background: var(--black); }
 .player-loading { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 14px; color: var(--ink); font-size: 12px; background: color-mix(in srgb, var(--background) 88%, transparent); border: 1px solid var(--line); border-radius: var(--radius-control); padding: 21px 26px; pointer-events: none; white-space: nowrap; }
 .spinner { width: 25px; height: 25px; border: 2px solid var(--line); border-top-color: var(--primary); border-radius: 50%; animation: spin 850ms linear infinite; }
@@ -354,6 +359,15 @@
 @media (max-width: 370px) { .brand-mark, .header-note { display: none; } }
 .watch-dialog { padding-bottom: env(safe-area-inset-bottom); }
 .watch-header { padding-top: max(16px, env(safe-area-inset-top)); }
+@media (max-height: 600px) {
+  .watch-header { padding: max(8px, env(safe-area-inset-top)) 16px 8px; }
+  .watch-header h2 { margin-top: 2px; font-size: 20px; }
+  .watch-header .eyebrow { font-size: 10px; }
+  .player-status, .player-error-inline { padding: 4px 16px; font-size: 13px; }
+  .player-actions { padding: 0 16px 8px; }
+  .watch-description { padding: 8px 16px; }
+  .watch-description-copy { margin-top: 4px; font-size: 13px; line-height: 1.5; }
+}
 
 .catalog-categories { border: 0; padding: 0; margin: 0; min-width: 0; }
 .category-option { position: relative; display: block; cursor: pointer; }
