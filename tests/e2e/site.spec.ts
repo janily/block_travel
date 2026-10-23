@@ -14,6 +14,23 @@ test("home is honest, loads no MP4 before selection, and supports legacy links",
   await expect(page.getByRole("link",{name:"播放《起源》",exact:true})).toHaveCount(0);
 });
 
+test("recent releases are directly playable from home and preserve keyboard focus",async({page})=>{
+  await page.goto("/");
+  const recent=page.getByRole("region",{name:"最近更新",exact:true});
+  await expect(recent.getByRole("heading",{level:3})).toHaveText(["哈希","公钥与私钥","工作量证明","默克尔树"]);
+  await expect(page.getByText("待更新",{exact:true})).toHaveCount(0);
+  const trigger=recent.getByRole("link",{name:"播放《哈希》",exact:true});
+  await trigger.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("dialog",{name:"哈希",exact:true})).toBeVisible();
+  await expect(page.locator("video")).toHaveAttribute("src","/media/videos/hash-v1.mp4");
+  await page.keyboard.press("Escape");
+  await expect(trigger).toBeFocused();
+  await recent.getByRole("link",{name:/浏览片单/}).click();
+  await expect(page).toHaveURL(/\/videos\?available=1$/);
+  await expect(page.getByLabel("仅看已更新")).toBeChecked();
+});
+
 test("filters, IME, clearing, no results recovery and URL history agree",async({page})=>{
   await page.goto("/videos?tag=kept#results");
   const input=page.getByRole("searchbox");

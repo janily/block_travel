@@ -1,0 +1,13 @@
+{
+  "findings": [],
+  "mode": "strict",
+  "projectRoot": "/workspace/scratch/4a3ee41e88cb/block_travel",
+  "schemaVersion": 1,
+  "summary": {
+    "errors": 0,
+    "total": 0,
+    "unresolved": 0,
+    "violations": 0,
+    "warnings": 0
+  }
+}
