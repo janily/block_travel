@@ -104,6 +104,27 @@
     "publishedAt": "2026-10-23"
   },
   {
+    "id": "forks-and-upgrades",
+    "status": "published",
+    "title": "分叉与升级",
+    "summary": "没有管理员，规则怎么改？",
+    "description": "理解区块链的分叉与协议升级，以及软分叉、硬分叉的区别。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 5,
+    "order": 24,
+    "durationSeconds": 163,
+    "src": "/media/videos/forks-and-upgrades-v1.mp4",
+    "poster": {
+      "src": "/posters/forks-and-upgrades-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《分叉与升级》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-23"
+  },
+  {
     "id": "consensus",
     "status": "planned",
     "title": "共识机制",
