@@ -22,13 +22,17 @@ export function FeaturedVideo({video}:{video:PublishedVideo}) {
     </div><p><FilmMeta video={video}/></p></div>
   </div>;
 }
-export function VideoCard({video}:{video:PublishedVideo}) {
-  return <article className={css("film-card available-card")}>
+export function VideoCard({video,variant="catalog"}:{video:PublishedVideo;variant?:"catalog"|"recent"}) {
+  return <article className={css("film-card available-card"+(variant==="recent"?" recent-card":""))}>
     <PlayLink video={video} aria-label={"播放《"+video.title+"》"}>
       <div className={css("card-media")}><img src={video.poster.src} width={video.poster.width} height={video.poster.height} alt={video.poster.alt}/>
         <span className={css("card-play")}><PlayIcon/></span><span className={css("duration")}>{formatDuration(video.durationSeconds)}</span>
       </div>
-      <div className={css("card-body")}><span className={css("card-category")}>{categories[video.category]} · 已更新</span><h3>{video.title}</h3><p>{video.summary}</p><p><FilmMeta video={video}/></p></div>
+      <div className={css("card-body")}>
+        <span className={css("card-category")}>{variant==="recent" ? <>{video.series ?? categories[video.category]}{video.episode ? " · 第 "+video.episode+" 集" : ""}</> : <>{categories[video.category]} · 已更新</>}</span>
+        <h3>{video.title}</h3><p>{video.summary}</p>
+        {variant==="catalog" && <p><FilmMeta video={video}/></p>}
+      </div>
     </PlayLink>
   </article>;
 }

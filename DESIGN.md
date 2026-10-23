@@ -71,7 +71,7 @@ Display: Chinese Song/serif, 40–61px for the main headline and 24–28px for s
 
 ## Layout
 
-76rem maximum width. Header 82px desktop / 70px mobile. The desktop hero allocates more width to the actual film frame; the short introduction sits to the left. At 720px it becomes a single column with the film still within the opening viewing flow. The homepage previews up to three planned topics in plain text columns, separated by fine rules. Below 720px they become single-column rows. The film topic appears before the first play action, with the true duration and Chinese caption information nearby. No fixed-height cards or text truncation.
+76rem maximum width. Header 82px desktop / 70px mobile. The desktop hero allocates more width to the actual film frame; the short introduction sits to the left. At 720px it becomes a single column with the film still within the opening viewing flow. The homepage follows the featured film with 最近更新: up to four playable films, excluding the featured film. Real 16:9 posters form a four-column screening shelf, two columns below 960px, and compact image/text rows below 720px. The film topic appears before the first play action, with the true duration and Chinese caption information nearby. No fixed-height cards or text truncation.
 
 The independent catalogue has a short 34–46px Song title, compact filters and a quiet results bar. Available films appear first under 已更新; with one real film, its thumbnail and text form a horizontal desktop feature, becoming a vertical layout below 720px. Multiple released films use a three/two/one-column grid. All five planned topics appear separately under 后续选题 as restrained text rows. At 720px, categories form an intentional 2×2 grid and search moves below them with 16px text. Status and category text stays at least 12px, without horizontal page scrolling.
 
@@ -136,3 +136,11 @@ The shared UI styles live in `src/components/ui.module.css`, global reset and ru
 React components replace the prototype ES modules; JSON content replaces `films.js`.
 Real media is versioned under `public/media/videos` and `public/posters`.
 No concept covers are rendered for planned topics. Filtering uses the v1.1 category labels.
+
+## Homepage release discovery · 2026-10-23
+
+The user's marked homepage section now prioritizes recently published films instead of upcoming topics. This supersedes the prototype's three-topic homepage preview above; upcoming topics remain in `/videos`. Keep the existing black/gold palette, Song headings, real artwork and shared player. Reduce desktop hero whitespace so the release shelf appears earlier; do not introduce a carousel or autoplay.
+
+`VideoCard` owns both catalogue and `recent` variants. The homepage variant shows series/episode, title, summary, real duration and a persistent play affordance without repeating the catalogue's metadata. `recentVideos` sorts known `publishedAt` dates newest first, retains editorial order for same-day releases, and puts undated legacy entries last. The four films published on 2026-10-23 use that verified date; no dates are inferred for older films. Hide the section if no additional published film exists. The section's 浏览片单 link opens `/videos?available=1`.
+
+All values continue to consume the existing runtime tokens in `src/app/globals.css`; no new palette or font tokens are introduced. Reconciliation: the obsolete planned-only homepage rule is intentionally replaced by the user's release-discovery request; the catalogue and shared playback behavior stay authoritative.

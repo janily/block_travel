@@ -21,6 +21,7 @@ const base = {
 const media = {
   src: videoPath, durationSeconds: z.number().finite().positive(),
   poster, burnedInCaptions: z.boolean(),
+  publishedAt: z.iso.date().optional(),
 };
 export const videoSchema = z.discriminatedUnion("status", [
   z.object({...base, status: z.literal("published"), ...media}).strict(),
@@ -28,6 +29,7 @@ export const videoSchema = z.discriminatedUnion("status", [
   z.object({...base, status: z.literal("archived"),
     src: media.src.optional(), durationSeconds: media.durationSeconds.optional(),
     poster: poster.optional(), burnedInCaptions: z.boolean().optional(),
+    publishedAt: media.publishedAt,
   }).strict(),
 ]);
 export const siteSchema = z.object({name:text, description:text, featuredVideoId: text.nullable()}).strict();
@@ -52,6 +54,13 @@ export function publicVideos(videos: Video[]): PublicVideo[] {
 export function featuredVideo(data:Content): PublishedVideo | undefined {
   const published = publicVideos(data.videos).filter((v):v is PublishedVideo=>v.status === "published");
   return published.find(v=>v.id === data.site.featuredVideoId) ?? published[0];
+}
+export function recentVideos(videos: Video[], featuredId?: string): PublishedVideo[] {
+  return publicVideos(videos)
+    .filter((video): video is PublishedVideo => video.status === "published" && video.id !== featuredId)
+    // Same-day releases retain their editorial/episode order. Undated legacy films follow dated releases.
+    .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
+    .slice(0, 4);
 }
 export function formatDuration(seconds: number): string {
   const value = Math.floor(seconds);
