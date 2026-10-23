@@ -21,12 +21,83 @@
   },
   {
     "id": "blockchain",
-    "status": "planned",
-    "title": "区块与哈希",
-    "summary": "数据如何一块接一块，连接成一条链？",
+    "status": "published",
+    "title": "哈希",
+    "summary": "不公开内容，怎么证明没改过？",
+    "description": "从数据指纹到 SHA-256，理解哈希如何帮助验证数据是否被修改。",
     "category": "basics",
     "series": "机制解读",
-    "order": 20
+    "episode": 1,
+    "order": 20,
+    "durationSeconds": 195,
+    "src": "/media/videos/hash-v1.mp4",
+    "poster": {
+      "src": "/posters/hash-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《哈希》视频封面"
+    },
+    "burnedInCaptions": true
+  },
+  {
+    "id": "public-private-keys",
+    "status": "published",
+    "title": "公钥与私钥",
+    "summary": "没有银行，凭什么证明钱是你的？",
+    "description": "从私钥、公钥到地址与数字签名，理解链上资产如何证明归属和授权交易。",
+    "category": "basics",
+    "series": "机制解读",
+    "episode": 2,
+    "order": 21,
+    "durationSeconds": 185,
+    "src": "/media/videos/public-private-keys-v1.mp4",
+    "poster": {
+      "src": "/posters/public-private-keys-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《公钥与私钥》视频封面"
+    },
+    "burnedInCaptions": true
+  },
+  {
+    "id": "proof-of-work",
+    "status": "published",
+    "title": "工作量证明",
+    "summary": "同一笔钱花两次，听谁的？",
+    "description": "从双花问题出发，理解哈希计算、区块连接与工作量证明如何帮助网络选择账本。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 3,
+    "order": 22,
+    "durationSeconds": 165,
+    "src": "/media/videos/proof-of-work-v1.mp4",
+    "poster": {
+      "src": "/posters/proof-of-work-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《工作量证明》视频封面"
+    },
+    "burnedInCaptions": true
+  },
+  {
+    "id": "merkle-tree",
+    "status": "published",
+    "title": "默克尔树",
+    "summary": "上千笔交易，怎么用一个指纹锁住？",
+    "description": "把交易逐层哈希，理解默克尔根与默克尔证明如何支持高效的数据验证。",
+    "category": "basics",
+    "series": "机制解读",
+    "episode": 4,
+    "order": 23,
+    "durationSeconds": 153,
+    "src": "/media/videos/merkle-tree-v1.mp4",
+    "poster": {
+      "src": "/posters/merkle-tree-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《默克尔树》视频封面"
+    },
+    "burnedInCaptions": true
   },
   {
     "id": "consensus",
