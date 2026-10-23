@@ -125,6 +125,27 @@
     "publishedAt": "2026-10-23"
   },
   {
+    "id": "contracts",
+    "status": "published",
+    "title": "智能合约",
+    "summary": "不认识的两个人，怎么放心做交易？",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "order": 25,
+    "description": "从智能合约的概念出发，通过担保合约示例，理解链上的代码如何按约定执行交易。",
+    "episode": 6,
+    "durationSeconds": 148,
+    "src": "/media/videos/smart-contracts-v1.mp4",
+    "poster": {
+      "src": "/posters/smart-contracts-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《智能合约》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-23"
+  },
+  {
     "id": "consensus",
     "status": "planned",
     "title": "共识机制",
@@ -141,15 +162,6 @@
     "category": "mechanisms",
     "series": "机制解读",
     "order": 40
-  },
-  {
-    "id": "contracts",
-    "status": "planned",
-    "title": "智能合约",
-    "summary": "一段代码，如何按约定自动执行？",
-    "category": "mechanisms",
-    "series": "机制解读",
-    "order": 50
   },
   {
     "id": "defi",

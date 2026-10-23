@@ -58,8 +58,8 @@ export function featuredVideo(data:Content): PublishedVideo | undefined {
 export function recentVideos(videos: Video[], featuredId?: string): PublishedVideo[] {
   return publicVideos(videos)
     .filter((video): video is PublishedVideo => video.status === "published" && video.id !== featuredId)
-    // Same-day releases retain their editorial/episode order. Undated legacy films follow dated releases.
-    .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
+    // Later same-day episodes come first; undated legacy films retain editorial order.
+    .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || (a.publishedAt ? b.order - a.order : 0))
     .slice(0, 4);
 }
 export function formatDuration(seconds: number): string {

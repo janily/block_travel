@@ -5,7 +5,7 @@
 1. 从最新 main 创建工作分支。保留稳定 id；选择 basics（区块链基础）、mechanisms（链上机制）或 applications（应用场景）。
 2. 本地确认 MP4 为 H.264/AAC、yuv420p、画面及字幕清晰，文件名带版本号，例如 consensus-v1.mp4。不要覆盖已发布文件名悄悄换内容。
 3. 将视频加入 public/media/videos/，真实封面加入 public/posters/。不要提交原始母版或 Git LFS。
-4. 修改 content/videos.json 中对应 planned 记录为 published，补齐真实 src、durationSeconds、poster（src/width/height/alt）、burnedInCaptions，并填写实际发布日期 publishedAt（YYYY-MM-DD）。首页“最近更新”按此日期倒序选择最多 4 支非主推影片，同日保留 order/id 顺序；历史影片日期未知时可省略，不补造日期。已有《哈希》记录是完整示例。
+4. 修改 content/videos.json 中对应 planned 记录为 published，补齐真实 src、durationSeconds、poster（src/width/height/alt）、burnedInCaptions，并填写实际发布日期 publishedAt（YYYY-MM-DD）。首页“最近更新”按此日期倒序选择最多 4 支非主推影片，同日按 order 倒序（新集在前），同 order 按 id 升序；历史影片日期未知时可省略，不补造日期。已有《哈希》记录是完整示例。
 5. 如需主推，将 content/site.json 的 featuredVideoId 设为该 id；为 null 时使用按 order/id 排序的第一部 published。没有已发布影片时设 null。
 6. 执行 pnpm build，然后 pnpm exec playwright install chromium、pnpm test:e2e。提交源码、配置、视频和封面并创建 PR。
 7. 等待 CI，通过该提交对应的 Vercel Preview 检查声音、字幕、播放至少 15 秒、拖到未缓冲位置、关闭静音、手机横竖屏。确认后合并 main。
