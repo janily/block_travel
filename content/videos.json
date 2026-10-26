@@ -188,6 +188,27 @@
     "publishedAt": "2026-10-26"
   },
   {
+    "id": "zero-knowledge-proof",
+    "status": "published",
+    "title": "零知识证明",
+    "summary": "转账全公开，隐私怎么办？",
+    "description": "通过山洞的故事，理解零知识证明如何在不透露秘密的情况下，让验证者相信一个陈述成立。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 9,
+    "order": 28,
+    "durationSeconds": 144,
+    "src": "/media/videos/zero-knowledge-proof-v1.mp4",
+    "poster": {
+      "src": "/posters/zero-knowledge-proof-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《零知识证明》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-26"
+  },
+  {
     "id": "consensus",
     "status": "planned",
     "title": "共识机制",
