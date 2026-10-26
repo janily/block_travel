@@ -209,6 +209,27 @@
     "publishedAt": "2026-10-26"
   },
   {
+    "id": "proof-of-stake",
+    "status": "published",
+    "title": "权益证明",
+    "summary": "不比算力，怎么选记账的人？",
+    "description": "从质押与验证者的角色出发，理解权益证明如何选择区块提议者，并通过验证和奖惩机制维护账本。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 10,
+    "order": 29,
+    "durationSeconds": 135,
+    "src": "/media/videos/proof-of-stake-v1.mp4",
+    "poster": {
+      "src": "/posters/proof-of-stake-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《权益证明》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-26"
+  },
+  {
     "id": "consensus",
     "status": "planned",
     "title": "共识机制",
