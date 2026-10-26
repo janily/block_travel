@@ -167,6 +167,27 @@
     "publishedAt": "2026-10-26"
   },
   {
+    "id": "rollup",
+    "status": "published",
+    "title": "Rollup",
+    "summary": "链越来越忙，怎么扛得住？",
+    "description": "从区块链拥堵与扩容的难题出发，理解 Rollup 如何通过链外执行和批量提交来分担主链负担。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 8,
+    "order": 27,
+    "durationSeconds": 142,
+    "src": "/media/videos/rollup-v1.mp4",
+    "poster": {
+      "src": "/posters/rollup-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《Rollup》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-26"
+  },
+  {
     "id": "consensus",
     "status": "planned",
     "title": "共识机制",
