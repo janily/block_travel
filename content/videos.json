@@ -282,12 +282,24 @@
   },
   {
     "id": "gas",
-    "status": "planned",
-    "title": "Gas 费用",
-    "summary": "链上的一次操作，为什么需要支付费用？",
+    "status": "published",
+    "title": "手续费",
+    "summary": "为什么有时贵得离谱？",
     "category": "mechanisms",
     "series": "机制解读",
-    "order": 40
+    "order": 33,
+    "description": "从 Gas 用量、基础费与小费出发，理解链上手续费如何计算，以及网络拥堵为什么会推高费用。",
+    "episode": 13,
+    "durationSeconds": 133,
+    "src": "/media/videos/transaction-fees-v1.mp4",
+    "poster": {
+      "src": "/posters/transaction-fees-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《手续费》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-27"
   },
   {
     "id": "defi",
