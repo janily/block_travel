@@ -17,13 +17,13 @@ test("home is honest, loads no MP4 before selection, and supports legacy links",
 test("recent releases are directly playable from home and preserve keyboard focus",async({page})=>{
   await page.goto("/");
   const recent=page.getByRole("region",{name:"最近更新",exact:true});
-  await expect(recent.getByRole("heading",{level:3})).toHaveText(["权益证明","零知识证明","Rollup","预言机"]);
+  await expect(recent.getByRole("heading",{level:3})).toHaveText(["跨链桥","权益证明","零知识证明","Rollup"]);
   await expect(page.getByText("待更新",{exact:true})).toHaveCount(0);
-  const trigger=recent.getByRole("link",{name:"播放《权益证明》",exact:true});
+  const trigger=recent.getByRole("link",{name:"播放《跨链桥》",exact:true});
   await trigger.focus();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("dialog",{name:"权益证明",exact:true})).toBeVisible();
-  await expect(page.locator("video")).toHaveAttribute("src","/media/videos/proof-of-stake-v1.mp4");
+  await expect(page.getByRole("dialog",{name:"跨链桥",exact:true})).toBeVisible();
+  await expect(page.locator("video")).toHaveAttribute("src","/media/videos/cross-chain-bridge-v1.mp4");
   await page.keyboard.press("Escape");
   await expect(trigger).toBeFocused();
   await recent.getByRole("link",{name:/浏览片单/}).click();
