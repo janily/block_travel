@@ -251,6 +251,27 @@
     "publishedAt": "2026-10-27"
   },
   {
+    "id": "seed-phrase-recovery",
+    "status": "published",
+    "title": "助记词与恢复",
+    "summary": "私钥丢了怎么办？",
+    "description": "从助记词与校验位出发，理解钱包备份与恢复的基本原理，并认识社交恢复的思路。",
+    "category": "basics",
+    "series": "机制解读",
+    "episode": 12,
+    "order": 32,
+    "durationSeconds": 142,
+    "src": "/media/videos/seed-phrase-recovery-v1.mp4",
+    "poster": {
+      "src": "/posters/seed-phrase-recovery-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《助记词与恢复》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-27"
+  },
+  {
     "id": "consensus",
     "status": "planned",
     "title": "共识机制",
