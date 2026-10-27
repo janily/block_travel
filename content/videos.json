@@ -230,6 +230,27 @@
     "publishedAt": "2026-10-26"
   },
   {
+    "id": "cross-chain-bridge",
+    "status": "published",
+    "title": "跨链桥",
+    "summary": "币怎么去到另一条链？",
+    "description": "通过锁定、铸造与销毁、解锁的过程，理解跨链桥如何连接不同区块链上的资产。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 11,
+    "order": 31,
+    "durationSeconds": 129,
+    "src": "/media/videos/cross-chain-bridge-v1.mp4",
+    "poster": {
+      "src": "/posters/cross-chain-bridge-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《跨链桥》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-27"
+  },
+  {
     "id": "consensus",
     "status": "planned",
     "title": "共识机制",
