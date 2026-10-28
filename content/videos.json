@@ -324,11 +324,23 @@
   },
   {
     "id": "defi",
-    "status": "planned",
-    "title": "AMM 与兑换",
-    "summary": "没有传统订单簿，代币之间如何完成兑换？",
+    "status": "published",
+    "title": "自动做市商",
+    "summary": "没有庄家，价格怎么来？",
     "category": "applications",
     "series": "机制解读",
-    "order": 60
+    "order": 35,
+    "description": "从流动性池与恒定乘积公式出发，理解自动做市商如何为兑换定价，以及交易滑点、套利与流动性提供者的作用。",
+    "episode": 15,
+    "durationSeconds": 132,
+    "src": "/media/videos/automated-market-maker-v1.mp4",
+    "poster": {
+      "src": "/posters/automated-market-maker-v1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《自动做市商》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-28"
   }
 ]
