@@ -363,5 +363,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-10-29"
+  },
+  {
+    "id": "stablecoin",
+    "status": "published",
+    "title": "稳定币",
+    "summary": "凭什么一直值1美元？",
+    "description": "从锚定价格与储备资产出发，理解稳定币维持价格的机制，以及脱锚风险。",
+    "category": "applications",
+    "series": "机制解读",
+    "episode": 17,
+    "order": 37,
+    "durationSeconds": 136,
+    "src": "/media/videos/stablecoin-v1.mp4",
+    "poster": {
+      "src": "/posters/stablecoin-v1.jpg",
+      "width": 360,
+      "height": 203,
+      "alt": "《稳定币》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-29"
   }
 ]
