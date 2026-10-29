@@ -342,5 +342,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-10-28"
+  },
+  {
+    "id": "onchain-lending",
+    "status": "published",
+    "title": "链上借贷",
+    "summary": "不认识你，凭什么借给你？",
+    "description": "从抵押资产与借贷池出发，理解链上借贷如何运作，以及抵押率、利息与清算的作用。",
+    "category": "applications",
+    "series": "机制解读",
+    "episode": 16,
+    "order": 36,
+    "durationSeconds": 152,
+    "src": "/media/videos/onchain-lending-v1.mp4",
+    "poster": {
+      "src": "/posters/onchain-lending-v1.jpg",
+      "width": 360,
+      "height": 203,
+      "alt": "《链上借贷》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-10-29"
   }
 ]
