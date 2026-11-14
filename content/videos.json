@@ -480,5 +480,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-14"
+  },
+  {
+    "id": "fifty-one-percent-attack",
+    "status": "published",
+    "title": "51% 攻击",
+    "summary": "拿下过半算力，到底能做什么？",
+    "description": "从双花、链重组与交易审查出发，理解 51% 攻击的能力与边界。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 24,
+    "order": 44,
+    "durationSeconds": 172.617007,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep24.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep24cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《51% 攻击》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-14"
   }
 ]
