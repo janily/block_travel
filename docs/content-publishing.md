@@ -4,7 +4,7 @@
 
 1. 从最新 main 创建工作分支。保留稳定 id；选择 basics（区块链基础）、mechanisms（链上机制）或 applications（应用场景）。
 2. 本地确认 MP4 为 H.264/AAC、yuv420p、画面及字幕清晰，文件名带版本号，例如 consensus-v1.mp4。不要覆盖已发布文件名悄悄换内容。
-3. 将视频加入 public/media/videos/，真实封面加入 public/posters/。不要提交原始母版或 Git LFS。
+3. 视频和封面可使用本地素材（public/media/videos/ 和 public/posters/），也可使用已配置的 CDN：`https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/`。CDN 文件名只允许英文字母、数字、下划线和连字符；视频为 MP4，封面为 jpg/jpeg/png/webp，不带查询参数或片段。本地与 CDN 可混用，不必将 CDN 素材重复提交仓库。不要提交原始母版或 Git LFS。
 4. 修改 content/videos.json 中对应 planned 记录为 published，补齐真实 src、durationSeconds、poster（src/width/height/alt）、burnedInCaptions，并填写实际发布日期 publishedAt（YYYY-MM-DD）。首页“最近更新”按此日期倒序选择最多 4 支非主推影片，同日按 order 倒序（新集在前），同 order 按 id 升序；历史影片日期未知时可省略，不补造日期。已有《哈希》记录是完整示例。
 5. 如需主推，将 content/site.json 的 featuredVideoId 设为该 id；为 null 时使用按 order/id 排序的第一部 published。没有已发布影片时设 null。
 6. 执行 pnpm build，然后 pnpm exec playwright install chromium、pnpm test:e2e。提交源码、配置、视频和封面并创建 PR。
@@ -21,6 +21,8 @@ ffmpeg -i input.mp4 -c copy -movflags +faststart output.mp4
 ```
 
 第二条只适用于已兼容编码，不用于重复有损压缩。配置时长与实际误差应在一秒以内。pnpm content:check 不依赖 ffmpeg，也不替代真实浏览器解码和音画检查。
+
+CDN 发布时直接对 HTTPS 地址执行 ffprobe，并确认封面真实尺寸、图片可访问，以及下文的 Range 检查。`pnpm content:check` 验证 CDN 地址格式并继续检查所有本地素材；它不会联网检查 CDN 文件，避免构建依赖媒体服务的瞬时可用性。新增媒体域名时须同步调整 src/lib/content-schema.ts 的允许范围及相关测试。
 
 ## 更新与归档
 

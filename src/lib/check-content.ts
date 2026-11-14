@@ -28,9 +28,13 @@ export async function checkContent(root:string) {
   }
   const published = data.videos.filter(v=>v.status==="published");
   for(const v of published) {
-    const file = await asset(v.src,"media/videos",v.id+".src");
-    referenced.add(file.actual);
-    await asset(v.poster.src,"posters",v.id+".poster");
+    // CDN URLs are validated by the schema; check availability before publication,
+    // without making every build depend on the media service's network status.
+    if(!v.src.startsWith("https://")) {
+      const file = await asset(v.src,"media/videos",v.id+".src");
+      referenced.add(file.actual);
+    }
+    if(!v.poster.src.startsWith("https://")) await asset(v.poster.src,"posters",v.id+".poster");
   }
   let totalBytes=0;
   async function walk(directory:string,seen:Set<string>) {

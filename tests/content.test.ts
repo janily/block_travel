@@ -20,6 +20,17 @@ async function fixture(){
 }
 afterEach(async()=>{await Promise.all(roots.splice(0).map(root=>rm(root,{recursive:true,force:true})));});
 describe("publication guard",()=>{
+  it("allows CDN media without local copies and still checks local assets in mixed catalogs",async()=>{
+    const root=await fixture();
+    const remote={...videos[0],src:"https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/20-mu.mp4",poster:{...videos[0].poster,src:"https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep20_multisig_cover.png"}};
+    await writeFile(join(root,"content/videos.json"),JSON.stringify([remote]));
+    await rm(join(root,"public"),{recursive:true});
+    expect((await checkContent(root)).published).toBe(1);
+    await writeFile(join(root,"content/videos.json"),JSON.stringify([{...remote,poster:videos[0].poster}]));
+    await expect(checkContent(root)).rejects.toThrow(/origin.*poster/);
+    await writeFile(join(root,"content/videos.json"),JSON.stringify([{...remote,src:videos[0].src}]));
+    await expect(checkContent(root)).rejects.toThrow(/origin.*src/);
+  });
   it("allows a clean empty checkout without public but still rejects published missing assets",async()=>{
     const root=await fixture();
     await rm(join(root,"public"),{recursive:true});
@@ -51,7 +62,7 @@ describe("publication guard",()=>{
     await expect(checkContent(root)).rejects.toThrow(/100 MiB/);
   });
   it("blocks traversal, external paths, queries and escaped paths",async()=>{
-    for(const src of ["/media/videos/../a.mp4","https://example.com/a.mp4","/media/videos/a.mp4?q=x","/media/videos/%2e%2e.mp4","/media/videos/a\\b.mp4"]){
+    for(const src of ["/media/videos/../a.mp4","https://example.com/a.mp4","/media/videos/a.mp4?q=x","/media/videos/%2e%2e.mp4","/media/videos/a\\b.mp4","http://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/a.mp4","https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com.evil.test/video/a.mp4","https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/../a.mp4"]){
       const root=await fixture();
       await writeFile(join(root,"content/videos.json"),JSON.stringify([{...videos[0],src}]));
       await expect(checkContent(root)).rejects.toThrow();

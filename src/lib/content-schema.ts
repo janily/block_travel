@@ -7,8 +7,8 @@ export const categories = {
 } as const;
 export const categorySchema = z.enum(["basics", "mechanisms", "applications"]);
 const text = z.string().trim().min(1);
-export const videoPath = z.string().regex(/^\/media\/videos\/[a-zA-Z0-9_-]+\.mp4$/, "须为 /media/videos/ 下的 MP4 文件");
-export const posterPath = z.string().regex(/^\/posters\/[a-zA-Z0-9_-]+\.(jpg|jpeg|png|webp)$/, "须为 /posters/ 下的图片");
+export const videoPath = z.string().regex(/^(\/media\/videos\/|https:\/\/3dicon-1251887421\.cos\.ap-guangzhou\.myqcloud\.com\/video\/)[a-zA-Z0-9_-]+\.mp4$/, "须为本地 MP4 或已配置 CDN 的 HTTPS MP4 地址");
+export const posterPath = z.string().regex(/^(\/posters\/|https:\/\/3dicon-1251887421\.cos\.ap-guangzhou\.myqcloud\.com\/video\/)[a-zA-Z0-9_-]+\.(jpg|jpeg|png|webp)$/, "须为本地图片或已配置 CDN 的 HTTPS 图片地址");
 const poster = z.object({
   src: posterPath, width: z.number().int().positive(), height: z.number().int().positive(), alt: text,
 }).strict();

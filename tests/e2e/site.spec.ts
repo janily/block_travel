@@ -17,13 +17,13 @@ test("home is honest, loads no MP4 before selection, and supports legacy links",
 test("recent releases are directly playable from home and preserve keyboard focus",async({page})=>{
   await page.goto("/");
   const recent=page.getByRole("region",{name:"最近更新",exact:true});
-  await expect(recent.getByRole("heading",{level:3})).toHaveText(["NFT","DAO","稳定币","链上借贷"]);
+  await expect(recent.getByRole("heading",{level:3})).toHaveText(["软分叉与硬分叉","共识机制","多签","NFT"]);
   await expect(page.getByText("待更新",{exact:true})).toHaveCount(0);
-  const trigger=recent.getByRole("link",{name:"播放《NFT》",exact:true});
+  const trigger=recent.getByRole("link",{name:"播放《软分叉与硬分叉》",exact:true});
   await trigger.focus();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("dialog",{name:"NFT",exact:true})).toBeVisible();
-  await expect(page.locator("video")).toHaveAttribute("src","/media/videos/nft-v1.mp4");
+  await expect(page.getByRole("dialog",{name:"软分叉与硬分叉",exact:true})).toBeVisible();
+  await expect(page.locator("video")).toHaveAttribute("src","https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/22_rfx.mp4");
   await page.keyboard.press("Escape");
   await expect(trigger).toBeFocused();
   await recent.getByRole("link",{name:/浏览片单/}).click();
@@ -38,11 +38,10 @@ test("filters, IME, clearing, no results recovery and URL history agree",async({
   await expect(page.getByRole("heading",{name:"共识机制"})).toBeVisible();
   await expect(page).toHaveURL(/q=/);
   await page.getByLabel("仅看已更新").check();
-  await expect(page.getByText("有 1 条匹配的待更新选题")).toBeVisible();
-  await page.getByRole("button",{name:"查看待更新选题"}).click();
-  await expect(page.getByRole("heading",{name:"后续选题"})).toBeFocused();
-  await expect(input).toHaveValue("共识");
-  await expect(page).not.toHaveURL(/available=/);
+  await expect(page.getByRole("link",{name:"播放《共识机制》",exact:true})).toBeVisible();
+  await input.fill("不存在的影片");
+  await expect(page.getByRole("heading",{name:"暂时没有匹配的影片"})).toBeVisible();
+  await page.getByLabel("仅看已更新").uncheck();
   await page.getByRole("button",{name:"清除搜索"}).click();
   await expect(input).toBeFocused();
   await expect(input).toHaveValue("");

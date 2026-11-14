@@ -294,12 +294,24 @@
   },
   {
     "id": "consensus",
-    "status": "planned",
+    "status": "published",
     "title": "共识机制",
     "summary": "没有统一的记账人，怎样对账本达成一致？",
     "category": "basics",
     "series": "机制解读",
-    "order": 30
+    "order": 41,
+    "description": "理解分布式网络如何通过共识机制，对交易与账本状态达成一致。",
+    "episode": 21,
+    "durationSeconds": 157.315011,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/21-gs.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep21_cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《共识机制》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-14"
   },
   {
     "id": "gas",
@@ -426,5 +438,47 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-03"
+  },
+  {
+    "id": "multisig",
+    "status": "published",
+    "title": "多签",
+    "summary": "一笔转账，为什么需要多人同意？",
+    "description": "从多人共同管理资产出发，理解多重签名如何通过签名门槛授权交易。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 20,
+    "order": 40,
+    "durationSeconds": 150.603991,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/20-mu.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep20_multisig_cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《多签》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-14"
+  },
+  {
+    "id": "soft-and-hard-forks",
+    "status": "published",
+    "title": "软分叉与硬分叉",
+    "summary": "同样是改规则，为什么有时会分成两条链？",
+    "description": "从规则兼容性出发，理解软分叉与硬分叉的区别，以及节点升级如何影响网络。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 22,
+    "order": 42,
+    "durationSeconds": 199.85,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/22_rfx.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep22_cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《软分叉与硬分叉》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-14"
   }
 ]
