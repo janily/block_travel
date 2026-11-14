@@ -482,6 +482,27 @@
     "publishedAt": "2026-11-14"
   },
   {
+    "id": "finality",
+    "status": "published",
+    "title": "最终性",
+    "summary": "交易什么时候算改不了？",
+    "description": "从交易确认与区块重组出发，理解区块链最终性的含义，以及交易何时可视为不可逆。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 23,
+    "order": 43,
+    "durationSeconds": 169.853991,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep23.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/23.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《最终性》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-14"
+  },
+  {
     "id": "fifty-one-percent-attack",
     "status": "published",
     "title": "51% 攻击",
