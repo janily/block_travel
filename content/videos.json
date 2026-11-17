@@ -543,5 +543,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-17"
+  },
+  {
+    "id": "digital-signatures",
+    "status": "published",
+    "title": "数字签名",
+    "summary": "一个签名，凭什么证明就是你？",
+    "description": "从签名与验证的过程出发，理解数字签名如何证明交易授权，以及签名随机数使用不当的风险。",
+    "category": "basics",
+    "series": "机制解读",
+    "episode": 26,
+    "order": 46,
+    "durationSeconds": 225.767007,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep26.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep26cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《数字签名》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-17"
   }
 ]
