@@ -585,5 +585,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-17"
+  },
+  {
+    "id": "mempool",
+    "status": "published",
+    "title": "交易池",
+    "summary": "交易发出去以后，在哪里排队？",
+    "description": "从交易广播、等待打包与手续费出发，理解交易池如何暂存待确认交易，以及交易加价的作用。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 28,
+    "order": 48,
+    "durationSeconds": 159.869002,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep28.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep28cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《交易池》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-17"
   }
 ]
