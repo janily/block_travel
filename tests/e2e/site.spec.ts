@@ -17,7 +17,7 @@ test("home is honest, loads no MP4 before selection, and supports legacy links",
 test("recent releases are directly playable from home and preserve keyboard focus",async({page})=>{
   await page.goto("/");
   const recent=page.getByRole("region",{name:"最近更新",exact:true});
-  await expect(recent.getByRole("heading",{level:3})).toHaveText(["51% 攻击","最终性","软分叉与硬分叉","共识机制"]);
+  await expect(recent.getByRole("heading",{level:3})).toHaveText(["罚没","51% 攻击","最终性","软分叉与硬分叉"]);
   await expect(page.getByText("待更新",{exact:true})).toHaveCount(0);
   const trigger=recent.getByRole("link",{name:"播放《软分叉与硬分叉》",exact:true});
   await trigger.focus();

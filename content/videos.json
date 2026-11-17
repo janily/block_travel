@@ -522,5 +522,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-14"
+  },
+  {
+    "id": "slashing",
+    "status": "published",
+    "title": "罚没",
+    "summary": "作恶的验证者，押金怎样被扣？",
+    "description": "从双重签名、环绕投票与关联惩罚出发，理解罚没机制如何约束验证者的行为。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 25,
+    "order": 45,
+    "durationSeconds": 215.921995,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep25.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep25cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《罚没》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-17"
   }
 ]
