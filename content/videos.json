@@ -627,5 +627,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-17"
+  },
+  {
+    "id": "difficulty-adjustment",
+    "status": "published",
+    "title": "难度调整",
+    "summary": "算力变了，出块时间怎么保持稳定？",
+    "description": "从挖矿目标值与周期性调整出发，理解比特币如何通过难度调整，应对全网算力的变化。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 30,
+    "order": 50,
+    "durationSeconds": 155.016009,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep30.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep30cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《难度调整》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-17"
   }
 ]
