@@ -669,5 +669,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-18"
+  },
+  {
+    "id": "longest-chain-rule",
+    "status": "published",
+    "title": "最长链规则",
+    "summary": "两条链同时出现，节点该信哪一条？",
+    "description": "理解比特币节点如何在有效链之间比较累计工作量，以及分叉后如何重新达成一致。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 32,
+    "order": 52,
+    "durationSeconds": 159.241995,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep32.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep32cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《最长链规则》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-18"
   }
 ]
