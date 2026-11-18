@@ -648,5 +648,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-17"
+  },
+  {
+    "id": "double-spending",
+    "status": "published",
+    "title": "双花",
+    "summary": "同一枚币，能不能付两次？",
+    "description": "从冲突交易、UTXO 与确认数出发，理解双花问题，以及区块重组与交易确认的关系。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 31,
+    "order": 51,
+    "durationSeconds": 159.869002,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep31.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep31cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《双花》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-18"
   }
 ]
