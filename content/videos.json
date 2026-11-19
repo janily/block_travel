@@ -711,5 +711,26 @@
     },
     "burnedInCaptions": true,
     "publishedAt": "2026-11-19"
+  },
+  {
+    "id": "validators",
+    "status": "published",
+    "title": "验证者",
+    "summary": "以太坊的验证者，到底是谁，每天在做什么？",
+    "description": "了解以太坊验证者如何参与区块提议与投票，以及质押和奖惩在其中的作用。",
+    "category": "mechanisms",
+    "series": "机制解读",
+    "episode": 34,
+    "order": 54,
+    "durationSeconds": 164.977007,
+    "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep34.mp4",
+    "poster": {
+      "src": "https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep34cover.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "《验证者》视频封面"
+    },
+    "burnedInCaptions": true,
+    "publishedAt": "2026-11-19"
   }
 ]

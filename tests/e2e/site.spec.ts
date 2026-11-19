@@ -17,13 +17,13 @@ test("home is honest, loads no MP4 before selection, and supports legacy links",
 test("recent releases are directly playable from home and preserve keyboard focus",async({page})=>{
   await page.goto("/");
   const recent=page.getByRole("region",{name:"最近更新",exact:true});
-  await expect(recent.getByRole("heading",{level:3})).toHaveText(["拜占庭容错","最长链规则","双花","难度调整"]);
+  await expect(recent.getByRole("heading",{level:3})).toHaveText(["验证者","拜占庭容错","最长链规则","双花"]);
   await expect(page.getByText("待更新",{exact:true})).toHaveCount(0);
-  const trigger=recent.getByRole("link",{name:"播放《拜占庭容错》",exact:true});
+  const trigger=recent.getByRole("link",{name:"播放《验证者》",exact:true});
   await trigger.focus();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("dialog",{name:"拜占庭容错",exact:true})).toBeVisible();
-  await expect(page.locator("video")).toHaveAttribute("src","https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep33.mp4");
+  await expect(page.getByRole("dialog",{name:"验证者",exact:true})).toBeVisible();
+  await expect(page.locator("video")).toHaveAttribute("src","https://3dicon-1251887421.cos.ap-guangzhou.myqcloud.com/video/ep34.mp4");
   await page.keyboard.press("Escape");
   await expect(trigger).toBeFocused();
   await recent.getByRole("link",{name:/浏览片单/}).click();
